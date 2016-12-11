@@ -86,7 +86,8 @@ def get_data(path, branch):
     files = {}
     for file in os.listdir(path):
         if file.endswith('.js'):
-            files[file] = open(os.path.join(path, file), 'r').read()
+            fileshort = file.replace(".js", "")
+            files[fileshort] = open(os.path.join(path, file), 'r').read()
     data['modules'] = files
     return data
 
